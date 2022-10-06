@@ -1,13 +1,11 @@
 //pseudocode
 
 //Display the current day and date in the top of the calendar section.
-
+//use moment.js for date and time.
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
-//use moment.js for date and time.
-
 //Add the time blocks for the day when the user scrolls down.
-//Use bootstrap flex layout for the time blocks
+//Use bootstrap grid layout for the time blocks
 
 ///each time block for that day is color-coded to indicate whether it is in the past, present, or future.
 //Use Bootstrap color utilities to color code the time blocks
