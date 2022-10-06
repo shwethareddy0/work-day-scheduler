@@ -2,6 +2,8 @@
 
 //Display the current day and date in the top of the calendar section.
 
+$("#currentDay").text(moment().format("dddd, MMMM Do"));
+
 //use moment.js for date and time.
 
 //Add the time blocks for the day when the user scrolls down.
