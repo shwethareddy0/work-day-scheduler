@@ -16,7 +16,7 @@ Here is the link to the [deployed application](https://shwethareddy0.github.io/w
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Technologies Used](#technologiesused)
+- [Technologies Used](#technologies-used)
 - [Credits](#credits)
 - [License](#license)
 
