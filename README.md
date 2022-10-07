@@ -4,7 +4,7 @@
 
 Work Day Scheduler is a simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
-Here is the link to the [deployed application]()
+Here is the link to the [deployed application](https://shwethareddy0.github.io/work-day-scheduler/)
 
 ### Features
 
