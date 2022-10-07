@@ -33,7 +33,7 @@ This project can be used in any web browser or on any devices including the mobi
 
 The following image is the demo screenshot of the deployed application.
 
-![Demo screenshot]()
+![Demo screenshot](./images/demo-work-day-scheduler.gif)
 
 Following is a code snippet of the application page.
 
