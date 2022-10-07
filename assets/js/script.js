@@ -1,12 +1,10 @@
-//pseudocode
-
 //Display the current day and date in the top of the calendar section.
 //use moment.js for date and time.
+
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 var currentTime = moment().format("HH");
 // currentTime = 12;
-console.log(currentTime);
 
 //Each time block for that day is color-coded to indicate whether it is in the past, present, or future.
 
@@ -28,6 +26,7 @@ function handleSaveButton(timeBlock) {
   //Once the event is saved, a notification appears on top of the time-blocks
   notification.show();
   var userInput = $("#" + timeBlock + " textarea").val();
+
   //When clicked on save button, button color changes to black.
   var saveIcon = $("#" + timeBlock)
     .parent()
@@ -48,7 +47,7 @@ function handleSaveButton(timeBlock) {
 }
 
 //When the page is refreshed,the saved events should persist.
-//localstorage.getitem
+
 var workDayScheduleFromLocalStorage = JSON.parse(
   localStorage.getItem("work-day-schedule")
 );
@@ -57,4 +56,3 @@ if (workDayScheduleFromLocalStorage !== null) {
     $("#" + i + " textarea").val(workDayScheduleFromLocalStorage[i]);
   }
 }
-//When clicked on save button, button color changes to black.
