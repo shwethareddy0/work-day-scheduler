@@ -5,7 +5,7 @@
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 var currentTime = moment().format("HH");
-//currentTime =9;
+// currentTime = 12;
 console.log(currentTime);
 
 //Each time block for that day is color-coded to indicate whether it is in the past, present, or future.
@@ -24,19 +24,24 @@ for (i = 9; i <= 17; i++) {
 
 function handleSaveButton(timeBlock) {
   var userInput = $("#" + timeBlock + " textarea").val();
-  console.log(userInput);
 
   var workDaySchedule = JSON.parse(localStorage.getItem("work-day-schedule"));
   if (workDaySchedule == null) {
     workDaySchedule = { [timeBlock]: userInput };
-    console.log(userInput);
   } else {
     //adding the next user input to the existing entry.
     workDaySchedule[timeBlock] = userInput;
-    console.log(userInput);
   }
   localStorage.setItem("work-day-schedule", JSON.stringify(workDaySchedule));
 }
 
-//When the page is refreshed the page ,the saved events should persist.
+//When the page is refreshed,the saved events should persist.
 //localstorage.getitem
+var workDayScheduleFromLocalStorage = JSON.parse(
+  localStorage.getItem("work-day-schedule")
+);
+if (workDayScheduleFromLocalStorage !== null) {
+  for (i = 9; i <= 17; i++) {
+    $("#" + i + " textarea").val(workDayScheduleFromLocalStorage[i]);
+  }
+}
