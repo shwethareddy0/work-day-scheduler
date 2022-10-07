@@ -77,3 +77,8 @@ textarea {
 .col-8 {
   padding: 0;
 }
+
+#notification {
+  text-align: center;
+  margin-bottom: 10px;
+}

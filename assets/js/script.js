@@ -22,9 +22,17 @@ for (i = 9; i <= 17; i++) {
 
 //When clicked on the save button for that time block ,the text for that event is saved in local storage.
 
-function handleSaveButton(timeBlock) {
-  var userInput = $("#" + timeBlock + " textarea").val();
+var notification = $("#notification");
 
+function handleSaveButton(timeBlock) {
+  //Once the event is saved, a notification appears on top of the time-blocks
+  notification.show();
+  var userInput = $("#" + timeBlock + " textarea").val();
+  //When clicked on save button, button color changes to black.
+  var saveIcon = $("#" + timeBlock)
+    .parent()
+    .find("i");
+  saveIcon.css("color", "black");
   var workDaySchedule = JSON.parse(localStorage.getItem("work-day-schedule"));
   if (workDaySchedule == null) {
     workDaySchedule = { [timeBlock]: userInput };
@@ -33,6 +41,10 @@ function handleSaveButton(timeBlock) {
     workDaySchedule[timeBlock] = userInput;
   }
   localStorage.setItem("work-day-schedule", JSON.stringify(workDaySchedule));
+  notification.fadeOut(3000);
+  setTimeout(function () {
+    saveIcon.css("color", "white");
+  }, 500);
 }
 
 //When the page is refreshed,the saved events should persist.
@@ -45,3 +57,4 @@ if (workDayScheduleFromLocalStorage !== null) {
     $("#" + i + " textarea").val(workDayScheduleFromLocalStorage[i]);
   }
 }
+//When clicked on save button, button color changes to black.
