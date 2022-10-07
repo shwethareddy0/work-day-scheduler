@@ -20,11 +20,23 @@ for (i = 9; i <= 17; i++) {
   }
 }
 
-//when clicked into a time block, an event can be entered.
-//event is written in a html text area in the time block.
-
 //When clicked on the save button for that time block ,the text for that event is saved in local storage.
-//use AddeventListener for the button click and localstorage.setitem for storing the event.
+
+function handleSaveButton(timeBlock) {
+  var userInput = $("#" + timeBlock + " textarea").val();
+  console.log(userInput);
+
+  var workDaySchedule = JSON.parse(localStorage.getItem("work-day-schedule"));
+  if (workDaySchedule == null) {
+    workDaySchedule = { [timeBlock]: userInput };
+    console.log(userInput);
+  } else {
+    //adding the next user input to the existing entry.
+    workDaySchedule[timeBlock] = userInput;
+    console.log(userInput);
+  }
+  localStorage.setItem("work-day-schedule", JSON.stringify(workDaySchedule));
+}
 
 //When the page is refreshed the page ,the saved events should persist.
 //localstorage.getitem
